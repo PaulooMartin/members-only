@@ -1,0 +1,10 @@
+<h1>Welcome.</h1>
+
+<% if @posts %>
+    <% @posts.each do |post| %>
+        <div class="post">
+            <h1 class="post_title"><%= post.title %></h1>
+            <p class="post_body"><%= post.body %></p>
+        </div>
+    <% end %>
+<% end %>

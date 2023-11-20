@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'posts#index'
   devise_for :users
 
+  resources :posts, only: [:index, :new, :create]
+
   get "up" => "rails/health#show", as: :rails_health_check
   # Defines the root path route ("/")
   # root "posts#index"
