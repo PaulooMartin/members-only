@@ -7,6 +7,5 @@ class User < ApplicationRecord
   validates :username, uniqueness: {case_sensitive: false }, presence: true,
                       length: { minimum: 3 }, format: { without: /\W/,
                       message: "can only have letters, numbers, and underlines" }
-  has_many :posts
-
+  has_many :posts, :dependent => :delete_all
 end
