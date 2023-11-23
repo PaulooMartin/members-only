@@ -1,0 +1,11 @@
+<div class="header">
+    <div class="logo">
+        <h1>Welcome to Members-Only</h1>
+    </div>
+
+    <% if @logged_in %>
+        <%# edit & signout buttons %>
+    <% else %>
+        <%# signup & signin buttons %>
+    <% end %>
+</div>

@@ -1,9 +1,13 @@
-<h1>Welcome.</h1>
+<%= render "header" %>
 
 <% if @posts %>
     <% @posts.each do |post| %>
+        <hr>
         <div class="post">
-            <h1 class="post_title"><%= post.title %></h1>
+            <h3 class="post_title">Title: <%= post.title %></h1>
+            <% if @logged_in %>
+                <p class="post_author">Author: <%= post.user.username %></p>
+            <% end %>        
             <p class="post_body"><%= post.body %></p>
         </div>
     <% end %>
