@@ -1,5 +1,11 @@
 <%= render "header" %>
 
+<% if @logged_in %>
+    <div class="post-controls">
+        <%= link_to "Create a new post", new_post_path %>
+    </div>
+<% end %>
+
 <% if @posts %>
     <% @posts.each do |post| %>
         <hr>
