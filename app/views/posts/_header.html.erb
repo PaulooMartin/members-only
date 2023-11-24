@@ -4,7 +4,7 @@
     </div>
 
     <div class="account-controls">
-    <% if @logged_in %>
+    <% if user_signed_in? %>
         <button class="edit-acct">
             <%= link_to "Edit Account", edit_user_registration_path %>
         </button>
@@ -19,7 +19,7 @@
     <% end %>
     </div>
 
-    <% if @logged_in %>
+    <% if user_signed_in? %>
         <hr>
     <% end %>
 </div>

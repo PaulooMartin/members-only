@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :require_log_in, only: [:new, :create]
 
   def index
-    @logged_in = session.has_key?("warden.user.user.key")
     @posts = Post.all
   end
 

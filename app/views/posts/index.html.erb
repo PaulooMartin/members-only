@@ -1,20 +1,10 @@
 <%= render "header" %>
 
-<% if @logged_in %>
+<h2>Posts by the Members</h2>
+<% if user_signed_in? %>
     <div class="post-controls">
         <%= link_to "Create a new post", new_post_path %>
     </div>
 <% end %>
 
-<% if @posts %>
-    <% @posts.each do |post| %>
-        <hr>
-        <div class="post">
-            <h3 class="post_title">Title: <%= post.title %></h1>
-            <% if @logged_in %>
-                <p class="post_author">Author: <%= post.user.username %></p>
-            <% end %>        
-            <p class="post_body"><%= post.body %></p>
-        </div>
-    <% end %>
-<% end %>
+<%= render @posts %>
