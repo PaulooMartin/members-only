@@ -6,8 +6,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    user = User.find_by(id: get_user_id)
-    @post = user.posts.build(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to root_path
     else
@@ -30,9 +29,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body)
-  end
-
-  def get_user_id
-    session["warden.user.user.key"][0][0]
   end
 end
